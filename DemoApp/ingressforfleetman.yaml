@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  # namespace: game-2048
+  name: ingress-fleetman
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/subnets: subnet-04a122fb712793f0f, subnet-0f615d006008dc30b
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: fleetman-webapp
+                port:
+                  number: 30008       
+            # backend:
+            #   serviceName: service-2048
+            #   servicePort: 80
