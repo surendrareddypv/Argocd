@@ -24,7 +24,12 @@ spec:
   selector:
     app: webapp
   ports:
-  # - name: http
+  # # - name: http
+  # - port: 80
+  #   nodePort: 30008
+  # type: NodePort 
+  type: NodePort
+  ports:
+ # - name: "vote-service"
   - port: 80
-    nodePort: 30008
-  type: NodePort 
+    targetPort: 30008
