@@ -32,4 +32,4 @@ spec:
   ports:
  # - name: "vote-service"
   - port: 80
-    targetPort: 30008
+    targetPort: 32452

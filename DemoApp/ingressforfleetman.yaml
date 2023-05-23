@@ -19,7 +19,7 @@ spec:
               service:
                 name: fleetman-webapp
                 port:
-                  number: 30008       
+                  number: 32452       
             # backend:
             #   serviceName: service-2048
             #   servicePort: 80
