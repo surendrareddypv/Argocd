@@ -1,36 +1,36 @@
----
-apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: project-alpha
-  namespace: argocd
-spec:
-  sourceRepos:
-  - https://github.com/surendrareddypv/Argocd.git
-  destinations:
-  - namespace: argocd
-    server: https://kubernetes.default.svc
-  - namespace: jenkins
-    server: https://kubernetes.default.svc
-  clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: project-2
-  namespace: argocd
-spec:
-  project: project-2
-  source:
-    repoURL: https://github.com/surendrareddypv/Argocd.git
-    targetRevision: master
-    path: Applications/Jenkins
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: jenkins
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: AppProject
+# metadata:
+#   name: project-alpha
+#   namespace: argocd
+# spec:
+#   sourceRepos:
+#   - https://github.com/surendrareddypv/Argocd.git
+#   destinations:
+#   - namespace: argocd
+#     server: https://kubernetes.default.svc
+#   - namespace: jenkins
+#     server: https://kubernetes.default.svc
+#   clusterResourceWhitelist:
+#   - group: '*'
+#     kind: '*'
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: project-2
+#   namespace: argocd
+# spec:
+#   project: project-2
+#   source:
+#     repoURL: https://github.com/surendrareddypv/Argocd.git
+#     targetRevision: master
+#     path: Applications/Jenkins
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: jenkins
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
