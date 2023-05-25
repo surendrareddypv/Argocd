@@ -26,7 +26,7 @@ spec:
   source:
     repoURL: https://github.com/surendrareddypv/Argocd.git
     targetRevision: master
-    path: Application/Jenkins
+    path: Applications/Jenkins
   destination:
     server: https://kubernetes.default.svc
     namespace: jenkins
