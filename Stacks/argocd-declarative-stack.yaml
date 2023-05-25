@@ -22,7 +22,7 @@ metadata:
   name: project-2
   namespace: argocd
 spec:
-  project: project-alpha
+  project: project-2
   source:
     repoURL: https://github.com/surendrareddypv/Argocd.git
     targetRevision: master
